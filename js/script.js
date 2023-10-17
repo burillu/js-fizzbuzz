@@ -7,7 +7,11 @@
 // const containerFizz = document.getElementById('fizz-buzz');
 const body = document.querySelector('body'); 
 const divContainer= document.createElement('div');
-divContainer.className= 'container mt-5';
+divContainer.className= 'container my-5';
+const titleH1 = document.createElement('h1');
+titleH1.className= 'text-center text-white py-5 display-1 fw-bold';
+titleH1.innerText='** Fizz-Buzz Game **';
+divContainer.append(titleH1);
 const divRow = document.createElement('div');
 divRow.className= 'row row-cols-9 g-2';
 divContainer.append(divRow);
