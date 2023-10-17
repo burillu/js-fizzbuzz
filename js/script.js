@@ -9,7 +9,7 @@ const body = document.querySelector('body');
 const divContainer= document.createElement('div');
 divContainer.className= 'container mt-5';
 const divRow = document.createElement('div');
-divRow.className= 'row row-cols-10';
+divRow.className= 'row row-cols-9 g-2';
 divContainer.append(divRow);
 // const divCol = document.createElement('div');
 
@@ -20,24 +20,29 @@ divContainer.append(divRow);
 let text, bg;
 
 
+
 for (let i = 1; i <= 100; i++) {
+    let color = ' text-white'
     const divCol = document.createElement('div');
     const divCont = document.createElement('div');
     if(i % 3=== 0 && i % 5===0){
         bg= ' bg-success';
         text= 'FizzBuzz';
+        color += ' fw-bold';
     }else if ( i % 3 === 0){
         bg= ' bg-primary';
         text= 'Fizz';
+        color += ' fw-bold';
     }else if ( i % 5 === 0){
-        bg= ' bg-danger';
+        bg= ' bg-warning';
         text= 'Buzz';
+        color= ' text-black fw-bold';
     }else{
         bg= ' bg-secondary';
         text= i;
     }
     divCol.classList='col'
-    divCont.classList = 'box' + bg;
+    divCont.classList = 'box' + bg + color;
     divCont.innerText= text
     divCol.append(divCont);
 
