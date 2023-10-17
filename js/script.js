@@ -7,9 +7,9 @@
 // const containerFizz = document.getElementById('fizz-buzz');
 const body = document.querySelector('body'); 
 const divContainer= document.createElement('div');
-divContainer.className= 'container';
+divContainer.className= 'container mt-5';
 const divRow = document.createElement('div');
-divRow.className= 'row';
+divRow.className= 'row row-cols-10';
 divContainer.append(divRow);
 // const divCol = document.createElement('div');
 
@@ -22,6 +22,7 @@ let text, bg;
 
 for (let i = 1; i <= 100; i++) {
     const divCol = document.createElement('div');
+    const divCont = document.createElement('div');
     if(i % 3=== 0 && i % 5===0){
         bg= ' bg-success';
         text= 'FizzBuzz';
@@ -35,9 +36,13 @@ for (let i = 1; i <= 100; i++) {
         bg= ' bg-secondary';
         text= i;
     }
+    divCol.classList='col'
+    divCont.classList = 'box' + bg;
+    divCont.innerText= text
+    divCol.append(divCont);
+
+    
     //append
-    divCol.classList='col'+ bg;
-    divCol.innerText= text
     divRow.append(divCol);
 
 
